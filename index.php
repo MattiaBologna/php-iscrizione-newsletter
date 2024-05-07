@@ -1,7 +1,6 @@
 <?php
 
 $email = $_POST['email'] ?? '';
-var_dump($email)
 
 ?>
 <!DOCTYPE html>
@@ -21,11 +20,11 @@ var_dump($email)
             if (isset($_POST['email'])) {
                 if (str_contains($email, '@') && (str_contains($email, '.'))) {
                     ?>
-                        <p>La mail è valida</p>
+                        <p class="alert-warning alert m-3" role="alert">La mail è valida</p>
                     <?php
                 } else {
                     ?>
-                        <p>La mail non è valida</p>
+                        <p class="alert-danger alert m-3" role="alert">La mail non è valida</p>
                     <?php
                 }
             }
