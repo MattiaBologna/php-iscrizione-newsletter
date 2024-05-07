@@ -2,21 +2,17 @@
 
 session_start();
 
-$email = $_POST['email'] ?? null;
+$email = $_POST['email'] ?? '';
 
 include_once __DIR__ . '\utilities.php';
 
-if ($email) {
+if (isset($_POST['email'])) {
 
-    $valid = emailIsValid($email);
-
-    $_SESSION['password'] = $password;
+    $_SESSION['email'] = $email;
 
     // redirect
     header('Location: ./subscription.php');
 }
-
-session_unset();
 
 ?>
 <!DOCTYPE html>
@@ -33,23 +29,6 @@ session_unset();
         <?php include __DIR__ . '/partials/header.php'; ?>
         
         <main class="flex-grow-1">
-
-            <?php
-
-                if (isset($_POST['email'])) {
-                    if (emailIsValid($email)) {
-                        ?>
-                            <p class="alert-warning alert m-3" role="alert">La mail è valida</p>
-                        <?php
-                    } else {
-                        ?>
-                            <p class="alert-danger alert m-3" role="alert">La mail non è valida</p>
-                        <?php
-                    }
-                
-                }     
-
-            ?>
 
             <section>
                 <div class="container py-5">
