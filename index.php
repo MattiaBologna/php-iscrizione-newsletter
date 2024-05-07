@@ -2,6 +2,23 @@
 
 $email = $_POST['email'] ?? '';
 
+var_dump(__DIR__);
+
+function emailIsValid($email) {
+
+    $isValid = null;
+
+
+        if (str_contains($email, '@') && str_contains($email, '.')) {
+            $isValid = true;
+        } else {
+            $isValid = false;
+        }
+
+
+    return $isValid;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +35,7 @@ $email = $_POST['email'] ?? '';
         <?php
 
             if (isset($_POST['email'])) {
-                if (str_contains($email, '@') && (str_contains($email, '.'))) {
+                if (emailIsValid($email)) {
                     ?>
                         <p class="alert-warning alert m-3" role="alert">La mail è valida</p>
                     <?php
@@ -27,7 +44,8 @@ $email = $_POST['email'] ?? '';
                         <p class="alert-danger alert m-3" role="alert">La mail non è valida</p>
                     <?php
                 }
-            }
+            
+            }     
 
         ?>
 
