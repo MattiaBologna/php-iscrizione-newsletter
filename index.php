@@ -28,14 +28,14 @@ if (isset($_POST['email'])) {
 
         <?php include __DIR__ . '/partials/header.php'; ?>
         
-        <main class="flex-grow-1">
+        <main class="flex-grow-1 text-center">
 
             <section>
                 <div class="container py-5">
                     <div class="row">
                         <form action="" method="POST">
-                            <p>
-                                <label for="email">Email:</label>
+                            <p class="d-flex flex-column align-items-center justify-content-center">
+                                <label for="email" class="my-3">Email:</label>
                                 <input type="text" name="email" placeholder="Insert email...">
                             </p>
                         </form>

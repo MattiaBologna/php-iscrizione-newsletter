@@ -1,7 +1,7 @@
-<footer class="bg-dark text-white">
+<footer class="bg-dark text-white p-3">
     <section>
         <div class="container">
-            <div class="row">
+            <div class="row text-center">
                 <div class="col-4">links</div>
                 <div class="col-4">links</div>
                 <div class="col-4">links</div>
