@@ -2,22 +2,7 @@
 
 $email = $_POST['email'] ?? '';
 
-var_dump(__DIR__);
-
-function emailIsValid($email) {
-
-    $isValid = null;
-
-
-        if (str_contains($email, '@') && str_contains($email, '.')) {
-            $isValid = true;
-        } else {
-            $isValid = false;
-        }
-
-
-    return $isValid;
-}
+include_once __DIR__ . '\utilities.php';
 
 ?>
 <!DOCTYPE html>
